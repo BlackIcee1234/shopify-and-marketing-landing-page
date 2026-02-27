@@ -1,0 +1,45 @@
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 0;
+}
+
+.layout {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.info,
+.formBox {
+  border: 1px solid #8eaeea52;
+  border-radius: 1rem;
+  background: #0e1930;
+  padding: 1rem;
+}
+
+.info h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.info p {
+  margin-top: 0.7rem;
+  line-height: 1.65;
+  color: #c8daf9;
+}
+
+.info ul {
+  margin-top: 0.9rem;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  color: #d7e4fd;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
