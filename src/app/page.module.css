@@ -10,7 +10,7 @@
 .hero {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 5rem 1.25rem 2rem;
+  padding: 4.4rem 1.25rem 1.6rem;
   animation: fadeUp 700ms ease-out;
 }
 
@@ -24,6 +24,7 @@
   border-radius: 999px;
   font-size: 0.8rem;
   padding: 0.45rem 0.8rem;
+  animation: badgePulse 3.2s ease-in-out infinite;
 }
 
 .brand {
@@ -93,6 +94,35 @@
   padding: 0 1.25rem 3rem;
 }
 
+.sectionKeywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.4rem;
+}
+
+.sectionKeywords span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid #8cb4f054;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: #d8e8ff;
+  background: #112344;
+  padding: 0.35rem 0.65rem;
+}
+
+.sectionBenefits {
+  margin-top: 1.2rem;
+  padding: 1.35rem;
+  border: 1px solid #9cb8ec2e;
+  background: #0d172b99;
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  animation: fadeUp 700ms ease-out;
+}
+
 .section {
   margin-top: 2rem;
   padding: 1.35rem;
@@ -101,6 +131,12 @@
   border-radius: 1rem;
   backdrop-filter: blur(8px);
   animation: fadeUp 700ms ease-out;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.section:hover {
+  transform: translateY(-2px);
+  border-color: #47bcff4f;
 }
 
 .sectionTitle {
@@ -123,6 +159,13 @@
   margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.gridTwo {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -185,6 +228,16 @@
   color: #d4e2fd;
   font-size: 0.9rem;
   line-height: 1.45;
+}
+
+.card li svg,
+.contactLead li svg,
+.sectionKeywords span svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
 }
 
 .cardActions {
@@ -295,6 +348,44 @@
   font-size: 0.9rem;
 }
 
+.maintenanceGrid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.maintenanceCard {
+  border: 1px solid #8cb1ec40;
+  border-radius: 0.85rem;
+  background: #10213f;
+  padding: 0.9rem;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.maintenanceCard:hover {
+  transform: translateY(-2px);
+  border-color: #48c2ff66;
+}
+
+.maintenanceCard h3 {
+  font-size: 0.94rem;
+}
+
+.maintenanceCard p {
+  margin-top: 0.45rem;
+  color: #9be4ff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.maintenanceCard span {
+  display: block;
+  margin-top: 0.35rem;
+  color: #c6dbff;
+  font-size: 0.84rem;
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -306,10 +397,26 @@
   }
 }
 
+@keyframes badgePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 #59c6ff00;
+  }
+  50% {
+    box-shadow: 0 0 0 6px #59c6ff1f;
+  }
+}
+
 @media (max-width: 900px) {
   .grid,
+  .gridTwo,
   .simpleGrid,
-  .contactBox {
+  .contactBox,
+  .maintenanceGrid {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 3.4rem;
   }
 }

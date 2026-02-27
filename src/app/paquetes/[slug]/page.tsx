@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import {
   externalCosts,
   getPackageBySlug,
+  maintenanceByShopifyPackage,
   shopifyPackages,
   shopifyPlanCosts,
 } from "@/data/packages";
@@ -39,6 +40,10 @@ export default async function PackageDetailPage({ params }: PageProps) {
   if (!pkg) {
     notFound();
   }
+
+  const maintenance = maintenanceByShopifyPackage.find(
+    (plan) => plan.package === pkg.name,
+  );
 
   return (
     <main className={styles.page}>
@@ -89,6 +94,7 @@ export default async function PackageDetailPage({ params }: PageProps) {
           <ul className={styles.list}>
             <li>Comprar dominio para tu marca.</li>
             <li>Contratar tu plan de Shopify.</li>
+            <li>Configurar metodos de pago con tus datos fiscales.</li>
             <li>Definir metodos de pago y politicas comerciales.</li>
             {externalCosts.map((item) => (
               <li key={item}>{item}</li>
@@ -96,6 +102,20 @@ export default async function PackageDetailPage({ params }: PageProps) {
           </ul>
         </section>
       </div>
+
+      <section className={styles.card}>
+        <h2>No incluye y se cotiza por separado</h2>
+        <ul className={styles.list}>
+          <li>Diseno de logo o branding completo.</li>
+          <li>Compra de tema premium y ajustes avanzados de diseno.</li>
+          <li>Produccion de foto o video profesional.</li>
+          <li>Campanas de anuncios administradas por agencia externa.</li>
+          <li>
+            Mantenimiento mensual recomendado para este paquete:{" "}
+            {maintenance?.monthly ?? "a cotizar"}
+          </li>
+        </ul>
+      </section>
 
       <section className={styles.card}>
         <h2>Planes de Shopify (referencia en MXN)</h2>

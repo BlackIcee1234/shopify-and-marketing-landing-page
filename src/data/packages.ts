@@ -1,4 +1,5 @@
 import { ShopifyPackage } from "@/types/package";
+import { ServicePackage } from "@/types/service-package";
 
 export const shopifyPackages: ShopifyPackage[] = [
   {
@@ -119,7 +120,152 @@ export const externalCosts = [
 
 export const portfolioClients: string[] = [];
 
+export const landingPackages: ServicePackage[] = [
+  {
+    slug: "landing-start",
+    category: "landing",
+    name: "Landing Start",
+    priceMxn: "$2,000 MXN",
+    subtitle: "Pagina de una seccion para oferta principal y captacion rapida.",
+    includes: [
+      "Diseno base con copy orientado a conversion",
+      "Secciones clave: propuesta, beneficios, CTA y contacto",
+      "Integracion de formulario de contacto",
+      "Version responsive para movil y escritorio",
+      "Entrega lista para despliegue rapido",
+    ],
+    notIncludes: [
+      "Branding completo o diseno de logo",
+      "Produccion de fotos o video",
+      "Campanas de anuncios",
+      "Desarrollo de sistema administrativo",
+    ],
+    benefits: [
+      "Presentas tu oferta de forma clara",
+      "Generas mas consultas por WhatsApp y formulario",
+      "Validas propuesta comercial con baja inversion",
+    ],
+    maintenance: "$450 MXN/mes",
+  },
+  {
+    slug: "landing-growth",
+    category: "landing",
+    name: "Landing Growth",
+    priceMxn: "$4,400 MXN",
+    subtitle: "Landing mas completa para captacion continua y mejor confianza.",
+    includes: [
+      "Todo lo de Landing Start",
+      "Secciones extra: FAQ, proceso, testimonios o casos",
+      "Ajustes SEO base y metadata",
+      "2 rondas de ajustes post-entrega",
+      "Configuracion de eventos basicos de conversion",
+    ],
+    notIncludes: [
+      "Integraciones enterprise complejas",
+      "Automatizaciones avanzadas de CRM",
+      "Diseno grafico avanzado fuera del alcance",
+    ],
+    benefits: [
+      "Mejora claridad comercial y autoridad",
+      "Aumenta calidad del lead recibido",
+      "Facilita optimizacion por etapas",
+    ],
+    maintenance: "$700 MXN/mes",
+  },
+  {
+    slug: "landing-pro",
+    category: "landing",
+    name: "Landing Pro",
+    priceMxn: "$7,100 MXN",
+    subtitle: "Landing premium para campanas constantes y escalar captacion.",
+    includes: [
+      "Todo lo de Landing Growth",
+      "Estructura modular para futuras campanas",
+      "Integracion con email y automatizacion basica",
+      "Dashboard simple con metricas clave",
+      "Soporte inicial extendido de arranque",
+    ],
+    notIncludes: [
+      "Gestion completa de pauta",
+      "Produccion audiovisual profesional",
+      "Desarrollo de plataforma a medida",
+    ],
+    benefits: [
+      "Estandariza la captacion de oportunidades",
+      "Permite crecer por fases con bajo riesgo",
+      "Reduce dependencia de cambios tecnicos continuos",
+    ],
+    maintenance: "$1,100 MXN/mes",
+  },
+];
+
+export const marketingPackages: ServicePackage[] = [
+  {
+    slug: "acompanamiento-ads-basico",
+    category: "marketing",
+    name: "Acompanamiento Ads Basico",
+    priceMxn: "$1,500 MXN/mes",
+    subtitle: "Guia simple para activar anuncios y generar trafico inicial.",
+    includes: [
+      "Acompanamiento basico mensual",
+      "Soporte para segmentacion inicial en Meta Ads",
+      "1 pieza creativa simple con apoyo de IA",
+      "Revision de mensajes y CTA a WhatsApp o sitio",
+      "Reporte basico de trafico y clics",
+    ],
+    notIncludes: [
+      "No se garantiza volumen de ventas",
+      "No incluye gestion diaria de cuenta de anuncios",
+      "No incluye diseno grafico profesional ilimitado",
+      "No incluye agencia full-service",
+    ],
+    benefits: [
+      "Te ayuda a iniciar sin costos de agencia altos",
+      "Mantiene enfoque en atraer trafico calificado",
+      "Tu equipo conserva control de cierre de ventas",
+    ],
+    maintenance: "Mensual",
+  },
+  {
+    slug: "acompanamiento-ads-crecimiento",
+    category: "marketing",
+    name: "Acompanamiento Ads Crecimiento",
+    priceMxn: "$2,800 MXN/mes",
+    subtitle: "Seguimiento mensual con estructura basica para campanas continuas.",
+    includes: [
+      "Todo lo del plan basico",
+      "2 reuniones de seguimiento al mes",
+      "Sugerencias de optimizacion de segmentacion",
+      "2 piezas creativas simples con apoyo de IA",
+      "Tablero simple de avance mensual",
+    ],
+    notIncludes: [
+      "No somos agencia de performance avanzada",
+      "No incluye promesa de resultados de venta",
+      "No incluye produccion multimedia profesional",
+    ],
+    benefits: [
+      "Da continuidad a tus campanas mes con mes",
+      "Permite tomar decisiones por datos basicos",
+      "Evita costos elevados de servicios full marketing",
+    ],
+    maintenance: "Mensual",
+  },
+];
+
+export const maintenanceByShopifyPackage = [
+  { package: "Shopify Esencial", monthly: "$700 MXN/mes" },
+  { package: "Shopify Crecimiento", monthly: "$1,200 MXN/mes" },
+  { package: "Shopify Pro Emprende", monthly: "$1,900 MXN/mes" },
+];
+
 export function getPackageBySlug(slug: string) {
   return shopifyPackages.find((pkg) => pkg.slug === slug);
+}
+
+export function getServicePackageBySlug(slug: string) {
+  return [...landingPackages, ...marketingPackages].find(
+    (pkg) => pkg.slug === slug,
+  );
 }
 

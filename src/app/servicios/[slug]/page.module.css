@@ -1,0 +1,88 @@
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 0;
+}
+
+.hero {
+  border: 1px solid #8fb0ea52;
+  border-radius: 1rem;
+  background: #0e1a31;
+  padding: 1.2rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.15rem);
+}
+
+.price {
+  margin-top: 0.45rem;
+  color: #8ce6ff;
+  font-size: 1.18rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 0.45rem;
+  color: #c8daf9;
+  line-height: 1.6;
+}
+
+.layout {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #8eb2eb4a;
+  border-radius: 0.95rem;
+  background: #101d37;
+  padding: 1rem;
+}
+
+.card h2 {
+  font-size: 1rem;
+}
+
+.list {
+  margin-top: 0.75rem;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.list li {
+  color: #d2e3ff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.note {
+  margin-top: 1rem;
+  border: 1px solid #8fb0ea52;
+  border-radius: 0.95rem;
+  background: #0e1a31;
+  padding: 1rem;
+  color: #c6dbff;
+  line-height: 1.6;
+}
+
+.cta {
+  margin-top: 0.8rem;
+  display: inline-block;
+  border-radius: 999px;
+  border: 1px solid #8db5ff67;
+  background: linear-gradient(90deg, #26c4ff, #4f7dff);
+  color: #011229;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+

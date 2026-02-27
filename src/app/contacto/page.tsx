@@ -19,8 +19,8 @@ export default function ContactPage() {
             negocio, presupuesto y fecha de lanzamiento.
           </p>
           <ul>
-            <li>Correo: axel@impulsamx.studio</li>
-            <li>Telefono: +52 55 0000 0000</li>
+            <li>Correo: andreereyes0@gmail.com</li>
+            <li>Telefono: +52 3329860651</li>
             <li>Atencion: Lunes a Viernes, 9:00 a 18:00</li>
           </ul>
         </section>

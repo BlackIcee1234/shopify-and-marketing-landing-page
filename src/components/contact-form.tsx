@@ -7,15 +7,33 @@ type FormDataState = {
   name: string;
   email: string;
   business: string;
-  package: string;
+  packageSlug: string;
   message: string;
 };
+
+const packageOptions = [
+  { value: "sin-definir", label: "Aun no lo defino" },
+  { value: "esencial", label: "Shopify Esencial" },
+  { value: "crecimiento", label: "Shopify Crecimiento" },
+  { value: "pro-emprende", label: "Shopify Pro Emprende" },
+  { value: "landing-start", label: "Landing Start" },
+  { value: "landing-growth", label: "Landing Growth" },
+  { value: "landing-pro", label: "Landing Pro" },
+  {
+    value: "acompanamiento-ads-basico",
+    label: "Acompanamiento Ads Basico",
+  },
+  {
+    value: "acompanamiento-ads-crecimiento",
+    label: "Acompanamiento Ads Crecimiento",
+  },
+] as const;
 
 const initialData: FormDataState = {
   name: "",
   email: "",
   business: "",
-  package: "esencial",
+  packageSlug: "sin-definir",
   message: "",
 };
 
@@ -33,7 +51,12 @@ export function ContactForm() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          packageLabel:
+            packageOptions.find((option) => option.value === formData.packageSlug)
+              ?.label ?? "Aun no lo defino",
+        }),
       });
 
       if (!response.ok) {
@@ -43,7 +66,7 @@ export function ContactForm() {
       setFormData(initialData);
       setStatus("Solicitud enviada. Te contactaremos pronto.");
     } catch {
-      setStatus("Error al enviar. Escribenos a axel@impulsamx.studio.");
+      setStatus("Error al enviar. Escribenos a andreereyes0@gmail.com.");
     } finally {
       setIsSending(false);
     }
@@ -96,14 +119,19 @@ export function ContactForm() {
           <label htmlFor="package">Paquete de interes</label>
           <select
             id="package"
-            value={formData.package}
+            value={formData.packageSlug}
             onChange={(event) =>
-              setFormData((prev) => ({ ...prev, package: event.target.value }))
+              setFormData((prev) => ({
+                ...prev,
+                packageSlug: event.target.value,
+              }))
             }
           >
-            <option value="esencial">Shopify Esencial</option>
-            <option value="crecimiento">Shopify Crecimiento</option>
-            <option value="pro-emprende">Shopify Pro Emprende</option>
+            {packageOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
       </div>

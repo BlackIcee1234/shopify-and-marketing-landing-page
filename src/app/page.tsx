@@ -3,17 +3,27 @@ import {
   ArrowRight,
   BadgeCheck,
   Boxes,
-  Building2,
+  BriefcaseBusiness,
   ChartNoAxesCombined,
   ClipboardCheck,
+  FileBadge2,
   HandCoins,
-  Layers,
+  Hammer,
+  LineChart,
+  MonitorSmartphone,
   MousePointerClick,
+  SearchCheck,
   ShieldCheck,
   Sparkles,
+  Wrench,
 } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
-import { shopifyPackages } from "@/data/packages";
+import {
+  landingPackages,
+  maintenanceByShopifyPackage,
+  marketingPackages,
+  shopifyPackages,
+} from "@/data/packages";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -26,81 +36,84 @@ export default function Home() {
         </div>
         <p className={styles.brand}>ImpulsaMX Studio</p>
         <h1>
-          Construimos tiendas Shopify y landing pages de alto impacto para
-          crecer con orden y conversion.
+          Shopify, Landing y acompanamiento de trafico.
+          <br />
+          Claro, profesional y en MXN.
         </h1>
         <p className={styles.subtitle}>
-          Propuesta moderna, ligera y escalable para emprendedores que quieren
-          vender mejor en internet con una base enterprise.
+          Te ayudamos a lanzar y mejorar tu presencia digital con enfoque
+          practico: estructura, conversion y seguimiento.
         </p>
         <div className={styles.ctas}>
-          <a href="#paquetes" className={styles.primaryCta}>
+          <a href="#shopify" className={styles.primaryCta}>
             <MousePointerClick size={17} />
             Ver paquetes
           </a>
           <Link href="/contacto" className={styles.secondaryCta}>
-            <Building2 size={17} />
+            <BriefcaseBusiness size={17} />
             Agendar llamada
           </Link>
         </div>
       </header>
 
       <main className={styles.main}>
-        <section className={styles.section}>
+        <section className={styles.sectionKeywords}>
+          <span>
+            <ShieldCheck size={14} />
+            Calidad enterprise
+          </span>
+          <span>
+            <MonitorSmartphone size={14} />
+            Responsive
+          </span>
+          <span>
+            <SearchCheck size={14} />
+            Estructura clara
+          </span>
+          <span>
+            <LineChart size={14} />
+            Enfoque conversion
+          </span>
+          <span>
+            <Wrench size={14} />
+            Mantenimiento mensual
+          </span>
+        </section>
+
+        <section className={styles.sectionBenefits}>
           <div className={styles.sectionTitle}>
-            <Layers size={18} />
-            <h2>Que hacemos y como beneficia a tu negocio</h2>
+            <FileBadge2 size={18} />
+            <h2>Que ofrecemos y resultado esperado</h2>
           </div>
           <div className={styles.simpleGrid}>
             <div>
-              <h3>Arquitectura comercial clara</h3>
+              <h3>Shopify y Landing listos para publicar</h3>
               <p>
-                Organizamos menu, catalogo y mensajes para que tu cliente entienda
-                rapido que vendes y por que comprarte.
+                Te entregamos una base profesional y ordenada para empezar a
+                captar clientes rapido.
               </p>
             </div>
             <div>
-              <h3>Implementacion con enfoque en ventas</h3>
+              <h3>Enfoque en trafico y contacto</h3>
               <p>
-                Configuramos promociones, bloques clave y llamados a la accion
-                para impulsar conversion desde el inicio.
+                Nuestro objetivo es generar mas visitas hacia tu pagina y
+                WhatsApp para abrir oportunidades.
               </p>
             </div>
             <div>
-              <h3>Operacion simple para tu equipo</h3>
+              <h3>Sin promesas irreales</h3>
               <p>
-                Dejamos tu tienda lista para que puedas administrar productos,
-                pedidos y contenido sin complicarte.
-              </p>
-            </div>
-            <div>
-              <h3>Calidad enterprise</h3>
-              <p>
-                Aplicamos estructura mantenible, buenas practicas y medidas de
-                seguridad para despliegues confiables.
-              </p>
-            </div>
-            <div>
-              <h3>Escalabilidad real</h3>
-              <p>
-                Puedes iniciar con paquete base y crecer por fases con apps,
-                bundles y automatizaciones.
-              </p>
-            </div>
-            <div>
-              <h3>Velocidad y experiencia</h3>
-              <p>
-                Sitio ligero, animaciones sutiles y diseno responsive para
-                ofrecer mejor experiencia en movil y escritorio.
+                En acompanamiento de anuncios no prometemos ventas. Tu equipo
+                se enfoca en cierre y producto, nosotros en guia y trafico.
               </p>
             </div>
           </div>
         </section>
 
-        <section id="paquetes" className={styles.section}>
+        <section id="shopify" className={styles.section} aria-label="Paquetes Shopify">
           <div className={styles.sectionTitle}>
             <BadgeCheck size={18} />
-            <h2>Paquetes en MXN</h2>
+            <h2>Paquetes Shopify</h2>
           </div>
           <p className={styles.sectionText}>
             Todos los paquetes de Shopify se implementan sobre tema
@@ -138,6 +151,74 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="landing" className={styles.section}>
+          <div className={styles.sectionTitle}>
+            <Hammer size={18} />
+            <h2>Paquetes Landing (fuera de Shopify)</h2>
+          </div>
+          <p className={styles.sectionText}>
+            Solucion para captar leads, presentar servicios o lanzar campanas
+            sin depender de ecommerce.
+          </p>
+          <div className={styles.grid}>
+            {landingPackages.map((pkg) => (
+              <article key={pkg.slug} className={styles.card}>
+                <h3>{pkg.name}</h3>
+                <p className={styles.price}>{pkg.priceMxn}</p>
+                <p className={styles.cardSubtitle}>{pkg.subtitle}</p>
+                <ul>
+                  {pkg.includes.slice(0, 4).map((item) => (
+                    <li key={item}>
+                      <ShieldCheck size={14} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className={styles.cardActions}>
+                  <Link href={`/servicios/${pkg.slug}`} className={styles.cardLink}>
+                    Ver alcance e incluye
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="marketing" className={styles.section}>
+          <div className={styles.sectionTitle}>
+            <ChartNoAxesCombined size={18} />
+            <h2>Acompanamiento de Marketing (basico)</h2>
+          </div>
+          <p className={styles.sectionText}>
+            Apoyo mensual para iniciar publicidad digital y generar trafico a
+            pagina y WhatsApp. No es servicio de agencia full marketing.
+          </p>
+          <div className={styles.gridTwo}>
+            {marketingPackages.map((pkg) => (
+              <article key={pkg.slug} className={styles.card}>
+                <h3>{pkg.name}</h3>
+                <p className={styles.price}>{pkg.priceMxn}</p>
+                <p className={styles.cardSubtitle}>{pkg.subtitle}</p>
+                <ul>
+                  {pkg.includes.slice(0, 4).map((item) => (
+                    <li key={item}>
+                      <ShieldCheck size={14} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className={styles.cardActions}>
+                  <Link href={`/servicios/${pkg.slug}`} className={styles.cardLink}>
+                    Ver alcance y limites
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className={styles.section}>
           <div className={styles.sectionTitle}>
             <Boxes size={18} />
@@ -153,6 +234,22 @@ export default function Home() {
               "Mantenimiento mensual",
             ].map((extra) => (
               <span key={extra}>{extra}</span>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.section}>
+          <div className={styles.sectionTitle}>
+            <Wrench size={18} />
+            <h2>Mantenimiento mensual por paquete Shopify</h2>
+          </div>
+          <div className={styles.maintenanceGrid}>
+            {maintenanceByShopifyPackage.map((plan) => (
+              <article key={plan.package} className={styles.maintenanceCard}>
+                <h3>{plan.package}</h3>
+                <p>{plan.monthly}</p>
+                <span>Actualizaciones, soporte y ajustes menores</span>
+              </article>
             ))}
           </div>
         </section>
@@ -196,6 +293,10 @@ export default function Home() {
                 <li>
                   <HandCoins size={14} />
                   Fecha objetivo de lanzamiento
+                </li>
+                <li>
+                  <HandCoins size={14} />
+                  Si ya tienes dominio y plan Shopify activo
                 </li>
               </ul>
             </div>
