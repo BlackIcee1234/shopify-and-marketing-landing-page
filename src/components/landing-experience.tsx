@@ -23,7 +23,7 @@ import catalogo from "@/data/accsx-packages.json";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
-const WHATSAPP_NUMBER = "525500000000";
+const WHATSAPP_NUMBER = "523324970334";
 
 const servicios = [
   {
@@ -154,55 +154,54 @@ export function LandingExperience() {
           transition={{ duration: 0.55 }}
           className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/[0.05] p-6 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur-sm md:p-10"
         >
-          <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div>
-              <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-3 py-2">
-                <Image
-                  src="/accsx_logo.png"
-                  alt="Logo ACCSX"
-                  width={30}
-                  height={30}
-                  className="h-7 w-7 rounded-md object-cover"
-                  priority
-                />
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#B8C7E0]">ACCSX</p>
-              </div>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-                Soluciones digitales claras para vender más y operar mejor.
-              </h1>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#B8C7E0] md:text-base">
-                Nos enfocamos en paquetes concretos: landing page, tienda Shopify, Google
-                Business, SEO local y capacitación para redes y campañas.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Button size="lg" asChild>
-                  <a
-                    href={crearLinkWhatsapp(
-                      "Hola ACCSX, quiero iniciar mi proyecto y conocer qué paquete me conviene.",
-                    )}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Inicia tu proyecto
-                  </a>
-                </Button>
-                <Button size="lg" variant="ghost" asChild>
-                  <a href="#paquetes">
-                    Ver paquetes y precios
-                    <ArrowDownRight size={16} />
-                  </a>
-                </Button>
-              </div>
-            </div>
+          <div className="pointer-events-none absolute inset-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-35"
+              style={{
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80')",
+              }}
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(130deg,rgba(2,15,46,0.9),rgba(6,26,62,0.82),rgba(2,15,46,0.95))]" />
+          </div>
 
-            <div className="overflow-hidden rounded-2xl border border-white/15 bg-white/5 p-2">
+          <div className="relative">
+            <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-3 py-2">
               <Image
                 src="/accsx_logo.png"
-                alt="Visual de marca ACCSX"
-                width={700}
-                height={980}
-                className="h-64 w-full rounded-xl object-cover object-top sm:h-72 lg:h-[22rem]"
+                alt="Logo ACCSX"
+                width={30}
+                height={30}
+                className="h-7 w-7 rounded-md object-cover"
+                priority
               />
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#B8C7E0]">ACCSX</p>
+            </div>
+            <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+              Soluciones digitales claras para vender más y operar mejor.
+            </h1>
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#B8C7E0] md:text-base">
+              Nos enfocamos en paquetes concretos: landing page, tienda Shopify, Google
+              Business, SEO local y capacitación para redes y campañas.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button size="lg" asChild>
+                <a
+                  href={crearLinkWhatsapp(
+                    "Hola ACCSX, quiero iniciar mi proyecto y conocer qué paquete me conviene.",
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Inicia tu proyecto
+                </a>
+              </Button>
+              <Button size="lg" variant="ghost" asChild>
+                <a href="#paquetes">
+                  Ver paquetes y precios
+                  <ArrowDownRight size={16} />
+                </a>
+              </Button>
             </div>
           </div>
         </motion.section>
@@ -374,8 +373,7 @@ export function LandingExperience() {
         >
           <h2 className="text-2xl font-semibold md:text-3xl">Paquetes y precios</h2>
           <p className="mt-2 max-w-2xl text-sm text-[#B8C7E0] md:text-base">
-            Todo está en un JSON para mantener los paquetes claros, editables y fáciles de
-            entender.
+            Elige el paquete que mejor encaja con tu etapa actual y empieza a vender más.
           </p>
 
           <div className="mt-6 space-y-6">
