@@ -13,20 +13,10 @@ type FormDataState = {
 
 const packageOptions = [
   { value: "sin-definir", label: "Aun no lo defino" },
-  { value: "esencial", label: "Shopify Esencial" },
-  { value: "crecimiento", label: "Shopify Crecimiento" },
-  { value: "pro-emprende", label: "Shopify Pro Emprende" },
-  { value: "landing-start", label: "Landing Start" },
-  { value: "landing-growth", label: "Landing Growth" },
-  { value: "landing-pro", label: "Landing Pro" },
-  {
-    value: "acompanamiento-ads-basico",
-    label: "Acompanamiento Ads Basico",
-  },
-  {
-    value: "acompanamiento-ads-crecimiento",
-    label: "Acompanamiento Ads Crecimiento",
-  },
+  { value: "landing-local", label: "Landing para negocio local" },
+  { value: "google-business", label: "Servicio Google Business" },
+  { value: "marketing-mensual", label: "Paquete mensual marketing" },
+  { value: "paquete-personalizado", label: "Paquete personalizado" },
 ] as const;
 
 const initialData: FormDataState = {

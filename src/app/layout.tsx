@@ -15,29 +15,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://impulsamx.studio"),
-  title: "ImpulsaMX Studio | Shopify y Web para Emprendedores",
+  metadataBase: new URL("https://accsx.com"),
+  title: "ACCSX | Sistemas Digitales para Empresas",
   description:
-    "Servicios Shopify y landing pages en MXN para emprendedores en Mexico. Implementacion profesional, rapida y enfocada en conversion.",
-  applicationName: "ImpulsaMX Studio",
+    "ACCSX diseña y desarrolla sitios web, automatizaciones e integraciones para empresas que buscan crecer con tecnología.",
+  applicationName: "ACCSX",
   keywords: [
-    "Shopify Mexico",
-    "Landing page profesional",
-    "Ecommerce para emprendedores",
-    "Diseno web MXN",
+    "ACCSX",
+    "Sistemas digitales",
+    "Automatización empresarial",
+    "Desarrollo web para empresas",
   ],
   openGraph: {
-    title: "ImpulsaMX Studio",
+    title: "ACCSX",
     description:
-      "Paquetes Shopify y landing pages con enfoque enterprise para clientes mexicanos.",
+      "Sistemas digitales, automatizaciones e integraciones para negocios modernos.",
     locale: "es_MX",
     type: "website",
+    images: ["/accsx_logo.png"],
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: [
+      { url: "/favicon_io/favicon.ico" },
+      { url: "/favicon_io/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon_io/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon_io/favicon.ico",
+    apple: "/favicon_io/apple-touch-icon.png",
   },
+  manifest: "/favicon_io/site.webmanifest",
 };
 
 export default function RootLayout({

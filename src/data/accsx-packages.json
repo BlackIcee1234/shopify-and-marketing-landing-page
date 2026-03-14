@@ -1,0 +1,178 @@
+{
+  "currency": "MXN",
+  "updatedAt": "2026-03-13",
+  "categories": [
+    {
+      "id": "landing",
+      "title": "Landing Page",
+      "description": "Para negocios que necesitan captar clientes rápido con una página clara y enfocada en conversión."
+    },
+    {
+      "id": "shopify",
+      "title": "Tienda Shopify",
+      "description": "Para vender en línea con una tienda profesional, estructura comercial e integraciones clave."
+    },
+    {
+      "id": "visibilidad",
+      "title": "Google Business y SEO local",
+      "description": "Para aparecer mejor en búsquedas locales y hacer que más personas encuentren tu negocio."
+    },
+    {
+      "id": "capacitacion",
+      "title": "Capacitación y campañas",
+      "description": "Para que tu equipo aprenda a usar redes, subir anuncios y administrar campañas correctamente."
+    }
+  ],
+  "packages": [
+    {
+      "id": "landing-inicial",
+      "categoryId": "landing",
+      "name": "Landing Inicial",
+      "regularPrice": 3500,
+      "promoPrice": 2900,
+      "discountLabel": "17% de descuento",
+      "deliverables": [
+        "Diseño de landing de una sección larga",
+        "Botón de WhatsApp y formulario de contacto",
+        "Copy base orientado a conversión",
+        "Configuración técnica para publicar"
+      ]
+    },
+    {
+      "id": "landing-pro",
+      "categoryId": "landing",
+      "name": "Landing Pro",
+      "regularPrice": 6200,
+      "promoPrice": 4900,
+      "discountLabel": "21% de descuento",
+      "deliverables": [
+        "Diseño premium con secciones estratégicas",
+        "Integración de testimonios y casos",
+        "Formulario avanzado con seguimiento",
+        "Optimización de velocidad y SEO técnico inicial"
+      ]
+    },
+    {
+      "id": "shopify-start",
+      "categoryId": "shopify",
+      "name": "Shopify Start",
+      "regularPrice": 7500,
+      "promoPrice": 5900,
+      "discountLabel": "21% de descuento",
+      "deliverables": [
+        "Configuración de tienda Shopify desde cero",
+        "Carga inicial de productos (hasta 30)",
+        "Páginas legales y métodos de pago",
+        "Capacitación básica para operar tu tienda"
+      ]
+    },
+    {
+      "id": "shopify-crecimiento",
+      "categoryId": "shopify",
+      "name": "Shopify Crecimiento",
+      "regularPrice": 11000,
+      "promoPrice": 8900,
+      "discountLabel": "19% de descuento",
+      "deliverables": [
+        "Estructura de tienda enfocada en conversión",
+        "Automatizaciones de recuperación de carrito",
+        "Integraciones clave (pixel, analytics y apps)",
+        "Acompañamiento de mejora durante 30 días"
+      ]
+    },
+    {
+      "id": "google-business-registro",
+      "categoryId": "visibilidad",
+      "name": "Google Business Registro + Optimización",
+      "regularPrice": 2500,
+      "promoPrice": 1800,
+      "discountLabel": "28% de descuento",
+      "deliverables": [
+        "Alta o reclamación de perfil en Google Business",
+        "Optimización de categoría, descripción y servicios",
+        "Carga inicial de fotos y datos completos",
+        "Conexión con WhatsApp y ubicación precisa"
+      ]
+    },
+    {
+      "id": "seo-local-base",
+      "categoryId": "visibilidad",
+      "name": "SEO Local Base (mensual)",
+      "regularPrice": 2200,
+      "promoPrice": 1500,
+      "discountLabel": "Precio de entrada",
+      "deliverables": [
+        "Optimización mensual de ficha local",
+        "Ajustes básicos para aparecer en búsquedas",
+        "Publicación de novedades o promociones",
+        "Reporte simple de avances"
+      ]
+    },
+    {
+      "id": "capacitacion-redes",
+      "categoryId": "capacitacion",
+      "name": "Capacitación Redes (2 sesiones)",
+      "regularPrice": 1800,
+      "promoPrice": 1200,
+      "discountLabel": "33% de descuento",
+      "deliverables": [
+        "Cómo publicar contenido con enfoque comercial",
+        "Buenas prácticas para reels e historias",
+        "Guía de calendario de contenidos semanal",
+        "Plantillas base para publicar más rápido"
+      ]
+    },
+    {
+      "id": "capacitacion-anuncios",
+      "categoryId": "capacitacion",
+      "name": "Capacitación Ads Inicial (2 sesiones)",
+      "regularPrice": 2400,
+      "promoPrice": 1600,
+      "discountLabel": "33% de descuento",
+      "deliverables": [
+        "Configuración correcta de campañas básicas",
+        "Segmentación inicial para negocio local",
+        "Cómo leer resultados sin complicarte",
+        "Checklist para no perder presupuesto"
+      ]
+    }
+  ],
+  "bundles": [
+    {
+      "id": "combo-impulso-local",
+      "name": "Combo Impulso Local",
+      "includes": [
+        "Landing Inicial",
+        "Google Business Registro + Optimización",
+        "SEO Local Base (1 mes)"
+      ],
+      "regularPrice": 8200,
+      "promoPrice": 5900,
+      "saving": 2300
+    },
+    {
+      "id": "combo-comercio-digital",
+      "name": "Combo Comercio Digital",
+      "includes": [
+        "Shopify Start",
+        "Google Business Registro + Optimización",
+        "Capacitación Redes (2 sesiones)"
+      ],
+      "regularPrice": 11800,
+      "promoPrice": 8400,
+      "saving": 3400
+    },
+    {
+      "id": "combo-acelerador-90-dias",
+      "name": "Combo Acelerador 90 Días",
+      "includes": [
+        "Landing Pro o Shopify Crecimiento",
+        "SEO Local Base (3 meses)",
+        "Capacitación Ads Inicial (2 sesiones)"
+      ],
+      "regularPrice": 18100,
+      "promoPrice": 13400,
+      "saving": 4700
+    }
+  ]
+}
